@@ -25,12 +25,12 @@ export const routes: Routes = [
         path: 'subscription',
         component: SubscriptionDemoComponent
     },
-    // {
-    //     path: 'creation-ops',
-    //     component: CreationOpsDemoComponent
-    // },
-    // {
-    //     path: 'pipeable-ops',
-    //     component: PipeableOpsDemoComponent
-    // },
+    {
+        path: 'creation-ops',
+        component: CreationOpsDemoComponent
+    },
+    {
+        path: 'pipeable-ops',
+        component: PipeableOpsDemoComponent
+    },
 ];

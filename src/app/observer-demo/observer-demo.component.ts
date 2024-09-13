@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { from } from 'rxjs';
 
@@ -26,6 +27,8 @@ export class ObserverDemoComponent {
   )
 
   // Observer is a consumer of values / data delivered by the source / Observable
+
+
   
   // updated syntax
   observer = {

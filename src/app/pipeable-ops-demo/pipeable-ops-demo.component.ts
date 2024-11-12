@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { AppService } from '../services/app.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { filter, map, of } from 'rxjs';
+import { filter, map, mergeMap, of } from 'rxjs';
 
 @Component({
   selector: 'app-pipeable-ops-demo',
@@ -13,7 +13,8 @@ import { filter, map, of } from 'rxjs';
 export class PipeableOpsDemoComponent {
   serv = inject(AppService)
 
-  source$ = this.serv.getUsers()
+  source$ = this.serv.getUsers().
+  pipe(mergeMap((resp: any) => resp),  filter((resp: any) => resp.id > 5))
 
 
   subData = this.source$.subscribe(

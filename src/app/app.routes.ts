@@ -6,6 +6,7 @@ import { ObservablesDemoComponent } from './observables-demo/observables-demo.co
 import { PipeableOpsDemoComponent } from './pipeable-ops-demo/pipeable-ops-demo.component';
 import { ObserverDemoComponent } from './observer-demo/observer-demo.component';
 import { SubscriptionDemoComponent } from './subscription-demo/subscription-demo.component';
+import { HigherOrderopsDemoComponent } from './higher-orderops-demo/higher-orderops-demo.component';
 
 export const routes: Routes = [
     {
@@ -32,5 +33,9 @@ export const routes: Routes = [
     {
         path: 'pipeable-ops',
         component: PipeableOpsDemoComponent
+    },
+    {
+        path: 'hoo',
+        component: HigherOrderopsDemoComponent
     },
 ];

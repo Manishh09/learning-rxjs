@@ -1,14 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
 
-  private http = inject(HttpClient)
+  #apiService = inject(ApiService)
+
+  #fakeServerUrl = 'https://jsonplaceholder.typicode.com'
 
   getUsers() {
-    return this.http.get("https://jsonplaceholder.typicode.com/users")
+    return this.#apiService.get(`${this.#fakeServerUrl}/users`)
   }
+
+  getUsersById(id: number){
+    return this.#apiService.get(`${this.#fakeServerUrl}/users/${id}`)
+  }
+
+  getAlbums(){
+    return this.#apiService.get(`${this.#fakeServerUrl}/albums`)
+  }
+
 }
